@@ -1,9 +1,13 @@
 import { useRoutes, BrowserRouter } from 'react-router-dom';
 
+// Pages
 import { Home } from '../Home';
 import { ImportantTasks } from '../ImportantTasks';
 import { Lists } from '../Lists';
 import { Tasks } from '../Tasks';
+
+// Components
+import { Navbar } from '../../components/Navbar';
 
 import './App.css';
 
@@ -35,6 +39,7 @@ export const App = () => {
    return (
       <BrowserRouter>
          <AppRoutes />
+         <Navbar />
       </BrowserRouter>
    );
 };
