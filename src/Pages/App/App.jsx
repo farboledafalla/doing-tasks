@@ -14,6 +14,18 @@ const AppRoutes = () => {
          path: '/',
          element: <Home />,
       },
+      {
+         path: '/important-tasks',
+         element: <ImportantTasks />,
+      },
+      {
+         path: '/lists',
+         element: <Lists />,
+      },
+      {
+         path: '/tasks',
+         element: <Tasks />,
+      },
    ]);
 
    return routes;
