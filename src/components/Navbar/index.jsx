@@ -5,9 +5,9 @@ export const Navbar = () => {
    const activeStyle = 'underline underline-offset-4';
 
    return (
-      <nav>
-         <ul>
-            <li>
+      <nav className='bg-slate-200 fixed top-0 z-10 w-full flex justify-center text-center text-lg'>
+         <ul className='w-full'>
+            <li className='border border-b-slate-300 w-full py-1'>
                <NavLink
                   to={'/'}
                   className={({ isActive }) =>
@@ -17,7 +17,7 @@ export const Navbar = () => {
                   Home
                </NavLink>
             </li>
-            <li>
+            <li className='border border-b-slate-300 w-full py-1'>
                <NavLink
                   to={'/important-tasks'}
                   className={({ isActive }) =>
@@ -27,7 +27,7 @@ export const Navbar = () => {
                   Important Tasks
                </NavLink>
             </li>
-            <li>
+            <li className='border border-b-slate-300 w-full py-1'>
                <NavLink
                   to={'/lists'}
                   className={({ isActive }) =>
@@ -37,7 +37,7 @@ export const Navbar = () => {
                   Lists
                </NavLink>
             </li>
-            <li>
+            <li className='border border-b-slate-300 w-full py-1'>
                <NavLink
                   to={'/tasks'}
                   className={({ isActive }) =>

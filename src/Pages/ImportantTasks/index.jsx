@@ -1,3 +1,10 @@
+// Layout
+import { Layout } from '../../components/Layout';
+
 export const ImportantTasks = () => {
-   return <div>ImportantTasks</div>;
+   return (
+      <Layout>
+         <div>ImportantTasks</div>
+      </Layout>
+   );
 };
