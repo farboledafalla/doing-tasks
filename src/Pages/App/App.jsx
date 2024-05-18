@@ -5,6 +5,7 @@ import { Home } from '../Home';
 import { ImportantTasks } from '../ImportantTasks';
 import { Lists } from '../Lists';
 import { Tasks } from '../Tasks';
+import { NotFound } from '../NotFound';
 
 // Components
 import { Navbar } from '../../components/Navbar';
@@ -29,6 +30,10 @@ const AppRoutes = () => {
       {
          path: '/tasks',
          element: <Tasks />,
+      },
+      {
+         path: '/*',
+         element: <NotFound />,
       },
    ]);
 
