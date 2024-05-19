@@ -22,7 +22,10 @@ export const Navbar = () => {
          {context.isNavbarOpen && (
             <nav className='w-full flex justify-center text-center text-lg'>
                <ul className='w-full'>
-                  <li className='border border-b-slate-300 w-full py-1'>
+                  <li
+                     className='border border-b-slate-300 w-full py-1'
+                     onClick={() => context.setIsNavbarOpen(false)}
+                  >
                      <NavLink
                         to={'/'}
                         className={({ isActive }) =>
@@ -32,7 +35,10 @@ export const Navbar = () => {
                         Home
                      </NavLink>
                   </li>
-                  <li className='border border-b-slate-300 w-full py-1'>
+                  <li
+                     className='border border-b-slate-300 w-full py-1'
+                     onClick={() => context.setIsNavbarOpen(false)}
+                  >
                      <NavLink
                         to={'/important-tasks'}
                         className={({ isActive }) =>
@@ -42,7 +48,10 @@ export const Navbar = () => {
                         Important Tasks
                      </NavLink>
                   </li>
-                  <li className='border border-b-slate-300 w-full py-1'>
+                  <li
+                     className='border border-b-slate-300 w-full py-1'
+                     onClick={() => context.setIsNavbarOpen(false)}
+                  >
                      <NavLink
                         to={'/lists'}
                         className={({ isActive }) =>
@@ -52,7 +61,10 @@ export const Navbar = () => {
                         Lists
                      </NavLink>
                   </li>
-                  <li className='border border-b-slate-300 w-full py-1'>
+                  <li
+                     className='border border-b-slate-300 w-full py-1'
+                     onClick={() => context.setIsNavbarOpen(false)}
+                  >
                      <NavLink
                         to={'/tasks'}
                         className={({ isActive }) =>
