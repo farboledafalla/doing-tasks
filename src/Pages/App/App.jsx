@@ -10,6 +10,9 @@ import { NotFound } from '../NotFound';
 // Components
 import { Navbar } from '../../components/Navbar';
 
+// Context
+import { DoingTaskProvider } from '../../Context';
+
 import './App.css';
 
 // Routes
@@ -42,9 +45,11 @@ const AppRoutes = () => {
 
 export const App = () => {
    return (
-      <BrowserRouter>
-         <AppRoutes />
-         <Navbar />
-      </BrowserRouter>
+      <DoingTaskProvider>
+         <BrowserRouter>
+            <AppRoutes />
+            <Navbar />
+         </BrowserRouter>
+      </DoingTaskProvider>
    );
 };

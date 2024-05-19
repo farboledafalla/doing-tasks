@@ -1,10 +1,17 @@
-import { createContext } from 'react';
+import { createContext, useState } from 'react';
 import PropTypes from 'prop-types';
 
 export const DoingTaskContext = createContext();
 
 export const DoingTaskProvider = ({ children }) => {
-   return <DoingTaskContext>{children}</DoingTaskContext>;
+   // Navbar open/close
+   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
+
+   return (
+      <DoingTaskContext.Provider value={{ isNavbarOpen, setIsNavbarOpen }}>
+         {children}
+      </DoingTaskContext.Provider>
+   );
 };
 
 DoingTaskProvider.propTypes = {
