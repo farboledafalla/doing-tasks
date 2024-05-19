@@ -5,9 +5,13 @@ import { Home } from '../Home';
 import { ImportantTasks } from '../ImportantTasks';
 import { Lists } from '../Lists';
 import { Tasks } from '../Tasks';
+import { NotFound } from '../NotFound';
 
 // Components
 import { Navbar } from '../../components/Navbar';
+
+// Context
+import { DoingTaskProvider } from '../../Context';
 
 import './App.css';
 
@@ -30,6 +34,10 @@ const AppRoutes = () => {
          path: '/tasks',
          element: <Tasks />,
       },
+      {
+         path: '/*',
+         element: <NotFound />,
+      },
    ]);
 
    return routes;
@@ -37,9 +45,11 @@ const AppRoutes = () => {
 
 export const App = () => {
    return (
-      <BrowserRouter>
-         <AppRoutes />
-         <Navbar />
-      </BrowserRouter>
+      <DoingTaskProvider>
+         <BrowserRouter>
+            <AppRoutes />
+            <Navbar />
+         </BrowserRouter>
+      </DoingTaskProvider>
    );
 };
