@@ -1,10 +1,27 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 
 // Context
 import { DoingTaskContext } from '../../Context';
 
 export const Navbar = () => {
+   const refNavbar = useRef(null);
+
+   // Cerrar el menu al hacer click afuera de el
+   useEffect(() => {
+      const handler = (e) => {
+         if (!refNavbar.current.contains(e.target)) {
+            context.setIsNavbarOpen(false);
+         }
+      };
+
+      document.addEventListener('mousedown', handler);
+
+      return () => {
+         document.removeEventListener('mousedown', handler);
+      };
+   });
+
    // Context
    const context = useContext(DoingTaskContext);
 
@@ -12,71 +29,73 @@ export const Navbar = () => {
    const activeStyle = 'underline underline-offset-4';
 
    return (
-      <div className='bg-slate-200 fixed top-0 z-10 w-full'>
+      <div className='bg-slate-200 fixed top-0 z-10 w-full' ref={refNavbar}>
          <div
             className='border border-b-slate-300 w-full py-1'
             onClick={() => context.setIsNavbarOpen(!context.isNavbarOpen)}
          >
             X
          </div>
-         {context.isNavbarOpen && (
-            <nav className='w-full flex justify-center text-center text-lg'>
-               <ul className='w-full'>
-                  <li
-                     className='border border-b-slate-300 w-full py-1'
-                     onClick={() => context.setIsNavbarOpen(false)}
+         <nav
+            className={`w-full justify-center text-center text-lg ${
+               context.isNavbarOpen ? 'flex' : 'hidden'
+            }`}
+         >
+            <ul className='w-full'>
+               <li
+                  className='border border-b-slate-300 w-full py-1'
+                  onClick={() => context.setIsNavbarOpen(false)}
+               >
+                  <NavLink
+                     to={'/'}
+                     className={({ isActive }) =>
+                        isActive ? activeStyle : undefined
+                     }
                   >
-                     <NavLink
-                        to={'/'}
-                        className={({ isActive }) =>
-                           isActive ? activeStyle : undefined
-                        }
-                     >
-                        Home
-                     </NavLink>
-                  </li>
-                  <li
-                     className='border border-b-slate-300 w-full py-1'
-                     onClick={() => context.setIsNavbarOpen(false)}
+                     Home
+                  </NavLink>
+               </li>
+               <li
+                  className='border border-b-slate-300 w-full py-1'
+                  onClick={() => context.setIsNavbarOpen(false)}
+               >
+                  <NavLink
+                     to={'/important-tasks'}
+                     className={({ isActive }) =>
+                        isActive ? activeStyle : undefined
+                     }
                   >
-                     <NavLink
-                        to={'/important-tasks'}
-                        className={({ isActive }) =>
-                           isActive ? activeStyle : undefined
-                        }
-                     >
-                        Important Tasks
-                     </NavLink>
-                  </li>
-                  <li
-                     className='border border-b-slate-300 w-full py-1'
-                     onClick={() => context.setIsNavbarOpen(false)}
+                     Important Tasks
+                  </NavLink>
+               </li>
+               <li
+                  className='border border-b-slate-300 w-full py-1'
+                  onClick={() => context.setIsNavbarOpen(false)}
+               >
+                  <NavLink
+                     to={'/lists'}
+                     className={({ isActive }) =>
+                        isActive ? activeStyle : undefined
+                     }
                   >
-                     <NavLink
-                        to={'/lists'}
-                        className={({ isActive }) =>
-                           isActive ? activeStyle : undefined
-                        }
-                     >
-                        Lists
-                     </NavLink>
-                  </li>
-                  <li
-                     className='border border-b-slate-300 w-full py-1'
-                     onClick={() => context.setIsNavbarOpen(false)}
+                     Lists
+                  </NavLink>
+               </li>
+               <li
+                  className='border border-b-slate-300 w-full py-1'
+                  onClick={() => context.setIsNavbarOpen(false)}
+               >
+                  <NavLink
+                     to={'/tasks'}
+                     className={({ isActive }) =>
+                        isActive ? activeStyle : undefined
+                     }
                   >
-                     <NavLink
-                        to={'/tasks'}
-                        className={({ isActive }) =>
-                           isActive ? activeStyle : undefined
-                        }
-                     >
-                        Tasks
-                     </NavLink>
-                  </li>
-               </ul>
-            </nav>
-         )}
+                     Tasks
+                  </NavLink>
+               </li>
+            </ul>
+         </nav>
       </div>
    );
 };
