@@ -7,8 +7,15 @@ export const DoingTaskProvider = ({ children }) => {
    // Navbar open/close
    const [isNavbarOpen, setIsNavbarOpen] = useState(false);
 
+   // Text to search
+   const [searchValue, setSearchValue] = useState('');
+
+   console.log('searchValue: ', searchValue);
+
    return (
-      <DoingTaskContext.Provider value={{ isNavbarOpen, setIsNavbarOpen }}>
+      <DoingTaskContext.Provider
+         value={{ isNavbarOpen, setIsNavbarOpen, searchValue, setSearchValue }}
+      >
          {children}
       </DoingTaskContext.Provider>
    );
