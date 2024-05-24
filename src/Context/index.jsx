@@ -22,5 +22,5 @@ export const DoingTaskProvider = ({ children }) => {
 };
 
 DoingTaskProvider.propTypes = {
-   children: PropTypes.func,
+   children: PropTypes.object,
 };
