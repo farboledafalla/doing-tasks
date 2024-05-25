@@ -30,11 +30,13 @@ export const Navbar = () => {
 
    return (
       <div className='bg-slate-200 fixed top-0 z-10 w-full' ref={refNavbar}>
-         <div
-            className='border border-b-slate-300 w-full py-1'
-            onClick={() => context.setIsNavbarOpen(!context.isNavbarOpen)}
-         >
-            X
+         <div className='border border-b-slate-300 w-full py-1'>
+            <button
+               className='bg-indigo-600 text-white px-3 ml-1 font-bold'
+               onClick={() => context.setIsNavbarOpen(!context.isNavbarOpen)}
+            >
+               X
+            </button>
          </div>
          <nav
             className={`w-full justify-center text-center text-lg ${
