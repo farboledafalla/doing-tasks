@@ -7,6 +7,7 @@ import { ListLists } from '../../components/ListLists';
 import { List } from '../../components/List';
 import { ListTasks } from '../../components/ListTasks';
 import { Task } from '../../components/Task';
+import { CreateList } from '../../components/CreateList';
 
 export const Home = () => {
    return (
@@ -30,6 +31,7 @@ export const Home = () => {
             <Task />
             <Task />
          </ListTasks>
+         <CreateList />
       </Layout>
    );
 };
