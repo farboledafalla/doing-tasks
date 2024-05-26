@@ -12,7 +12,6 @@ import { CreateList } from '../../components/CreateList';
 export const Home = () => {
    return (
       <Layout>
-         <div>Home</div>
          <Search />
          <div className='w-full mb-4'>
             <h2>Lists</h2>

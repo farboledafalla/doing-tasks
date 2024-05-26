@@ -7,7 +7,6 @@ import { Search } from '../../components/Search';
 export const Tasks = () => {
    return (
       <Layout>
-         <div>Tasks</div>
          <Search />
       </Layout>
    );

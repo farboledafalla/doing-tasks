@@ -44,14 +44,12 @@ const AppRoutes = () => {
 };
 
 export const App = () => {
-   
-
    return (
-      <DoingTaskProvider>
-         <BrowserRouter>
+      <BrowserRouter>
+         <DoingTaskProvider>
             <AppRoutes />
             <Navbar />
-         </BrowserRouter>
-      </DoingTaskProvider>
+         </DoingTaskProvider>
+      </BrowserRouter>
    );
 };
