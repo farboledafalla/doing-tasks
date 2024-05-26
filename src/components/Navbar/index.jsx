@@ -30,13 +30,16 @@ export const Navbar = () => {
 
    return (
       <div className='bg-slate-200 fixed top-0 z-10 w-full' ref={refNavbar}>
-         <div className='border border-b-slate-300 w-full py-1'>
+         <div className='border border-b-slate-300 w-full py-1 flex'>
             <button
                className='bg-indigo-600 text-white px-3 ml-1 font-bold'
                onClick={() => context.setIsNavbarOpen(!context.isNavbarOpen)}
             >
                X
             </button>
+            <div className='w-full flex justify-center items-center'>
+               <h1>{context.pageTitle}</h1>
+            </div>
          </div>
          <nav
             className={`w-full justify-center text-center text-lg ${
