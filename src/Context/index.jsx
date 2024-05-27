@@ -5,6 +5,28 @@ import PropTypes from 'prop-types';
 
 export const DoingTaskContext = createContext();
 
+// Default Lists
+const defaultLists = [
+   {
+      name: 'Home',
+      description: 'Home things',
+      nTasks: 0,
+      nTasksCompleted: 0,
+   },
+   {
+      name: 'Office',
+      description: 'Office things',
+      nTasks: 0,
+      nTasksCompleted: 0,
+   },
+   {
+      name: 'Hobbies',
+      description: 'Hobbies things',
+      nTasks: 0,
+      nTasksCompleted: 0,
+   },
+];
+
 export const DoingTaskProvider = ({ children }) => {
    // Location
    const location = useLocation();
@@ -17,6 +39,9 @@ export const DoingTaskProvider = ({ children }) => {
 
    // Navbar title
    const [pageTitle, setPageTitle] = useState('Home');
+
+   // Lists
+   const [lists, setLists] = useState(defaultLists);
 
    // Update page title on navigate
    useEffect(() => {
@@ -49,6 +74,8 @@ export const DoingTaskProvider = ({ children }) => {
             setSearchValue,
             pageTitle,
             setPageTitle,
+            lists,
+            setLists,
          }}
       >
          {children}
