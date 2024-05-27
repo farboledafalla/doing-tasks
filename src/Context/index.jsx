@@ -65,6 +65,13 @@ export const DoingTaskProvider = ({ children }) => {
       setPageTitle(changePageTitle());
    }, [location]);
 
+   // Searched Tasks
+   const searchedLists = lists.filter((list) => {
+      const listText = list.name.toLowerCase();
+      const searchText = searchValue.toLowerCase();
+      return listText.includes(searchText);
+   });
+
    return (
       <DoingTaskContext.Provider
          value={{
@@ -76,6 +83,7 @@ export const DoingTaskProvider = ({ children }) => {
             setPageTitle,
             lists,
             setLists,
+            searchedLists,
          }}
       >
          {children}

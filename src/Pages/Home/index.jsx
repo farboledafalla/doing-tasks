@@ -24,7 +24,7 @@ export const Home = () => {
             <h2>Lists</h2>
          </div>
          <ListLists>
-            {context.lists.map((task) => (
+            {context.searchedLists?.map((task) => (
                <List
                   key={task.name}
                   name={task.name}
