@@ -27,6 +27,31 @@ const defaultLists = [
    },
 ];
 
+// Default Tasks
+const defaultTasks = [
+   {
+      name: 'Finish the App',
+      description: 'Programming the App',
+      completed: false,
+      important: true,
+      listName: 'Office',
+   },
+   {
+      name: 'Make my bed',
+      description: 'Order my room',
+      completed: false,
+      important: true,
+      listName: 'Home',
+   },
+   {
+      name: 'Go Gym',
+      description: 'Do excercise',
+      completed: true,
+      important: true,
+      listName: 'Hobbies',
+   },
+];
+
 export const DoingTaskProvider = ({ children }) => {
    // Location
    const location = useLocation();
