@@ -24,13 +24,13 @@ export const Home = () => {
             <h2>Lists</h2>
          </div>
          <ListLists>
-            {context.searchedLists?.map((task) => (
+            {context.searchedLists?.map((list) => (
                <List
-                  key={task.name}
-                  name={task.name}
-                  description={task.description}
-                  nTasks={task.nTasks}
-                  nTasksCompleted={task.nTasksCompleted}
+                  key={list.name}
+                  name={list.name}
+                  description={list.description}
+                  nTasks={list.nTasks}
+                  nTasksCompleted={list.nTasksCompleted}
                />
             ))}
          </ListLists>
@@ -38,10 +38,15 @@ export const Home = () => {
             <h2>Important Tasks</h2>
          </div>
          <ListTasks>
-            <Task />
-            <Task />
-            <Task />
-            <Task />
+            {context.searchedTasks?.map((task) => (
+               <Task
+                  key={task.name}
+                  name={task.name}
+                  completed={task.completed}
+                  important={task.important}
+                  listName={task.listName}
+               />
+            ))}
          </ListTasks>
          <CreateList />
       </Layout>

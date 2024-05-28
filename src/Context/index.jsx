@@ -68,6 +68,9 @@ export const DoingTaskProvider = ({ children }) => {
    // Lists
    const [lists, setLists] = useState(defaultLists);
 
+   // Tasks
+   const [tasks, setTasks] = useState(defaultTasks);
+
    // Update page title on navigate
    useEffect(() => {
       const changePageTitle = () => {
@@ -90,11 +93,18 @@ export const DoingTaskProvider = ({ children }) => {
       setPageTitle(changePageTitle());
    }, [location]);
 
-   // Searched Tasks
+   // Searched Lists
    const searchedLists = lists.filter((list) => {
       const listText = list.name.toLowerCase();
-      const searchText = searchValue.toLowerCase();
-      return listText.includes(searchText);
+      const searchTextList = searchValue.toLowerCase();
+      return listText.includes(searchTextList);
+   });
+
+   // Searched Tasks
+   const searchedTasks = tasks.filter((task) => {
+      const taskText = task.name.toLowerCase();
+      const searchTextTask = searchValue.toLowerCase();
+      return taskText.includes(searchTextTask);
    });
 
    return (
@@ -109,6 +119,9 @@ export const DoingTaskProvider = ({ children }) => {
             lists,
             setLists,
             searchedLists,
+            tasks,
+            setTasks,
+            searchedTasks,
          }}
       >
          {children}
