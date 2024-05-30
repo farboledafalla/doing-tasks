@@ -84,6 +84,9 @@ export const DoingTaskProvider = ({ children }) => {
             case '/tasks':
                return 'Tasks';
 
+            case '/list/:id':
+               return 'List';
+
             default:
                return 'Home';
          }

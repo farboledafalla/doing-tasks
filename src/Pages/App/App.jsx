@@ -6,6 +6,7 @@ import { ImportantTasks } from '../ImportantTasks';
 import { Lists } from '../Lists';
 import { Tasks } from '../Tasks';
 import { NotFound } from '../NotFound';
+import { List } from '../List';
 
 // Components
 import { Navbar } from '../../components/Navbar';
@@ -33,6 +34,10 @@ const AppRoutes = () => {
       {
          path: '/tasks',
          element: <Tasks />,
+      },
+      {
+         path: '/list/:id',
+         element: <List />,
       },
       {
          path: '/*',
