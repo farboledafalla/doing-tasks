@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 
 // Context
 import { DoingTaskContext } from '../../Context';
@@ -24,14 +25,16 @@ export const Home = () => {
             <h2>Lists</h2>
          </div>
          <ListLists>
-            {context.searchedLists?.map((list) => (
-               <List
-                  key={list.name}
-                  name={list.name}
-                  description={list.description}
-                  nTasks={list.nTasks}
-                  nTasksCompleted={list.nTasksCompleted}
-               />
+            {context.searchedLists?.map((list, index) => (
+               <Link key={index} to={`/list/${index}`}>
+                  <List
+                     key={list.name}
+                     name={list.name}
+                     description={list.description}
+                     nTasks={list.nTasks}
+                     nTasksCompleted={list.nTasksCompleted}
+                  />
+               </Link>
             ))}
          </ListLists>
          <div className='w-full mt-6 mb-4'>
