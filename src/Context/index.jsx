@@ -107,7 +107,14 @@ export const DoingTaskProvider = ({ children }) => {
    const importantTasks = tasks.filter((task) => task.important === true);
 
    // Searched Tasks
-   const searchedTasks = importantTasks.filter((task) => {
+   const searchedImportantTasks = importantTasks.filter((task) => {
+      const taskText = task.name.toLowerCase();
+      const searchTextTask = searchValue.toLowerCase();
+      return taskText.includes(searchTextTask);
+   });
+
+   // Searched Tasks
+   const searchedTasks = tasks.filter((task) => {
       const taskText = task.name.toLowerCase();
       const searchTextTask = searchValue.toLowerCase();
       return taskText.includes(searchTextTask);
@@ -127,6 +134,7 @@ export const DoingTaskProvider = ({ children }) => {
             searchedLists,
             tasks,
             setTasks,
+            searchedImportantTasks,
             searchedTasks,
          }}
       >
