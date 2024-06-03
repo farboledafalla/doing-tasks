@@ -41,7 +41,7 @@ export const Home = () => {
             <h2>Important Tasks</h2>
          </div>
          <ListTasks>
-            {context.searchedTasks?.map((task) => (
+            {context.searchedImportantTasks?.map((task) => (
                <Task
                   key={task.name}
                   name={task.name}
