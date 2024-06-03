@@ -103,7 +103,7 @@ export const DoingTaskProvider = ({ children }) => {
       return listText.includes(searchTextList);
    });
 
-   //Important Taskd
+   //Important Tasks
    const importantTasks = tasks.filter((task) => task.important === true);
 
    // Searched Tasks
