@@ -47,7 +47,7 @@ const defaultTasks = [
       name: 'Go Gym',
       description: 'Do excercise',
       completed: true,
-      important: true,
+      important: false,
       listName: 'Hobbies',
    },
 ];
@@ -103,8 +103,11 @@ export const DoingTaskProvider = ({ children }) => {
       return listText.includes(searchTextList);
    });
 
+   //Important Taskd
+   const importantTasks = tasks.filter((task) => task.important === true);
+
    // Searched Tasks
-   const searchedTasks = tasks.filter((task) => {
+   const searchedTasks = importantTasks.filter((task) => {
       const taskText = task.name.toLowerCase();
       const searchTextTask = searchValue.toLowerCase();
       return taskText.includes(searchTextTask);
