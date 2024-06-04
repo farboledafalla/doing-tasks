@@ -10,20 +10,20 @@ const defaultLists = [
    {
       name: 'Home',
       description: 'Home things',
-      nTasks: 0,
+      nTasks: 2,
       nTasksCompleted: 0,
    },
    {
       name: 'Office',
       description: 'Office things',
-      nTasks: 0,
+      nTasks: 1,
       nTasksCompleted: 0,
    },
    {
       name: 'Hobbies',
       description: 'Hobbies things',
-      nTasks: 0,
-      nTasksCompleted: 0,
+      nTasks: 2,
+      nTasksCompleted: 1,
    },
 ];
 
@@ -44,10 +44,24 @@ const defaultTasks = [
       listName: 'Home',
    },
    {
+      name: 'Clean Desk',
+      description: 'Order my desk',
+      completed: false,
+      important: true,
+      listName: 'Home',
+   },
+   {
       name: 'Go Gym',
       description: 'Do excercise',
       completed: true,
       important: false,
+      listName: 'Hobbies',
+   },
+   {
+      name: 'Go Teather',
+      description: 'Whatch Movie',
+      completed: false,
+      important: true,
       listName: 'Hobbies',
    },
 ];

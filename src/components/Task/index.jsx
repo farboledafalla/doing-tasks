@@ -7,7 +7,7 @@ export const Task = ({ name, completed, important, listName }) => {
          <div>
             <p>completed: {completed ? 'Si' : 'No'}</p>
             <p>important: {important ? 'Si' : 'No'}</p>
-            {listName != 'NO' ? <p>Lista: listName</p> : <></>}
+            {listName != 'NO' ? <p>Lista: {listName}</p> : <></>}
          </div>
       </li>
    );
